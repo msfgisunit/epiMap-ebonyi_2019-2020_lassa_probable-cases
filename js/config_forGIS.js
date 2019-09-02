@@ -37,7 +37,7 @@
 	                    dimTime : "Weeks",
 	                    // temportal boundaries (timeMin, timeMax, defaultTime : INTERGER [defined] / STRING [default]) - Bound the temporal dimension : set a number for defined value, write a string for automatic value.
 	                    timeMin : 1,
-	                    timeMax : 31,
+	                    timeMax : 35,
 	                    defaultTime : "",
 	                    // dimGeo (STRING) - Geographical dimension, usually 'p' codes. Joins to geometry.
 	                    dimGeo : "PCODE",
@@ -216,7 +216,7 @@
 			// Define layout components (all param : STRING) - Title, descriptions, etc...
 		    layout : {
 		        // appTitle - Set the title of the webmap.
-		        appTitle : "NIGERIA - Ebonyi State - 2019 / 2020 Lassa Fever | Probable Cases",
+		        appTitle : "NIGERIA - Ebonyi State - 2019 / 2020 Lassa Fever | Probable-Suspected Cases",
 		        // analysisSectionTitle - Section title for analysis selector.
 		        analysisSectionTitle : "Map analysis",
 		        // analysisDescription - Description below analysis title (Use HTML tags for formatting).
@@ -280,16 +280,16 @@
 	                tooltip : "Weekly incidence rate"                
 	            },
 	            combined : {
-	                title   : "Cases",
+	                title   : "Probable - Suspected Cases",
 	                bars : {
-	                    legend  : "Bars : New weekly cases",
+	                    legend  : "Bars : New weekly probable cases",
 	                    axis    : "New weekly cases",
-	                    tooltip : "new cases"                    
+	                    tooltip : "New probable cases"                    
 	                },
 	                line : {
-	                    legend  : "Line : Cumulated cases",
+	                    legend  : "Line : Cumulated probable cases",
 	                    axis    : "Cumulated cases",
-	                    tooltip : "cumulated cases"                    
+	                    tooltip : "Cumulated probable cases"                    
 	                }                
 	            }
 	        },
