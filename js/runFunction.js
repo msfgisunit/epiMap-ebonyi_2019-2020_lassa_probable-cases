@@ -169,7 +169,7 @@ function runEpiMap(epiData, dsv, geoPoints, geoPolygons, remote){
                     sliderWeek.noUiSlider.set(d.data.key);
                 });
             });
-			geoSelectedChart_Cumulative.xAxis().tickFormat(function(l) { if(l>52) {return l-52} else{return l}; })
+			geoSelectedChart_Cumulative.xAxis().tickFormat(function(l) { if(l>104) {return l-104} else if(l>52) {return l-52} else {return l}; })
 
     // For given geo feature : Chart for rates based on values (non-cumulative).
     var geoSelectedChart_Measure = dc.lineChart('#geoSAnchorMeasure');
@@ -195,7 +195,7 @@ function runEpiMap(epiData, dsv, geoPoints, geoPolygons, remote){
                     sliderWeek.noUiSlider.set(d.data.key);
                 });
             });
-			geoSelectedChart_Measure.xAxis().tickFormat(function(l) { if(l>52) {return l-52} else{return l}; })
+			geoSelectedChart_Measure.xAxis().tickFormat(function(l) { if(l>104) {return l-104} else if(l>52) {return l-52} else {return l}; })
 			
     // For given geo feature : Chart for absolutes values (cumulative and non-cumulative).
     var geoSelectedChart_Combined = dc.compositeChart("#geoSAnchorCombined");
@@ -237,7 +237,7 @@ function runEpiMap(epiData, dsv, geoPoints, geoPolygons, remote){
                     sliderWeek.noUiSlider.set(d.data.key);
                 });
             });
-			geoSelectedChart_Combined.xAxis().tickFormat(function(l) { if(l>52) {return l-52} else{return l}; })
+			geoSelectedChart_Combined.xAxis().tickFormat(function(l) { if(l>104) {return l-104} else if(l>52) {return l-52} else {return l}; })
 
     // For all geo features : Chart for absolutes values (cumulative and non-cumulative).
     var geoAllChart_Combined = dc.compositeChart("#geoAllAnchorCombined");
@@ -280,7 +280,7 @@ function runEpiMap(epiData, dsv, geoPoints, geoPolygons, remote){
                     sliderWeek.noUiSlider.set(d.data.key);
                 });
             });
-		geoAllChart_Combined.xAxis().tickFormat(function(l) { if(l>52) {return l-52} else{return l}; })
+		geoAllChart_Combined.xAxis().tickFormat(function(l) { if(l>104) {return l-104} else if(l>52) {return l-52} else {return l}; })
             
 /////////////	ANALYSIS - start
 // 
@@ -687,12 +687,16 @@ map.addOverlay(popup);
 
     function updateValues(){
 		var writtenValue = $('#selectWeek')[0].noUiSlider.get();
-		if (writtenValue > 52){
-			writtenValue = writtenValue-52;
+		if (writtenValue > 104){
+			writtenValue = writtenValue-104;
 			$('#selectWeek_value').html("<i>" + configFile.layout.dimensionIndicator + " " + parseInt(writtenValue) + " - 2020</i>");
 		}
-		else{
+		else if (writtenValue > 52){
+			writtenValue = writtenValue-52;
 			$('#selectWeek_value').html("<i>" + configFile.layout.dimensionIndicator + " " + parseInt(writtenValue) + " - 2019</i>");
+		}
+		else{
+			$('#selectWeek_value').html("<i>" + configFile.layout.dimensionIndicator + " " + parseInt(writtenValue) + " - 2018</i>");
 		}
         
     };

@@ -12,16 +12,16 @@
 		            y : 6.25
 		        },
 		        // zoomLevel (INTEGER) - Default zoom level displayed on start.
-		        zoomLevel : 9.25,
+		        zoomLevel : 9,
 		        // zoom Max/Min (zoomLevelMax, zoomLevelMin : INTEGER) - Set the maximum and minimum zoom level.
-		        zoomLevelMax : 18,
+		        zoomLevelMax : 11,
 		        zoomLevelMin : 6			
 			},
 			data : {
 				// epiDataset - Related to the delimiter-separated values dataset to be joined to the geometry.
 				epiDataset : {
 					// source (STRING) - Link to the epi data, can be remote or local.
-					source : "data/ebonyi_lassa_2019-2020_probable.csv",
+					source : "data/ebonyi_lassa_2018-2019-2020_probable.csv",
 					// delimiter (STRING) - Defines the delimiter used in the dataset.
 					delimiter : ";",
 	                // remote (BOOLEAN) -  To be set as 'true' for online use. Set as 'false' to avoid CORS issues on local use.
@@ -36,8 +36,8 @@
 	                    // dimTime (STRING) - Temporal dimension, for the filter slider.
 	                    dimTime : "Weeks",
 	                    // temportal boundaries (timeMin, timeMax, defaultTime : INTERGER [defined] / STRING [default]) - Bound the temporal dimension : set a number for defined value, write a string for automatic value.
-	                    timeMin : 1,
-	                    timeMax : 35,
+	                    timeMin : 53,
+	                    timeMax : 87,
 	                    defaultTime : "",
 	                    // dimGeo (STRING) - Geographical dimension, usually 'p' codes. Joins to geometry.
 	                    dimGeo : "PCODE",
@@ -207,7 +207,7 @@
 	                    // strokeColor (STRING) - RGBA string that define the color of polygons' outlines.
 	                    strokeColor : "rgba(0,0,0,1)",
 	                    // strokeWidth (REAL) - Defines the width of polygons' outlines.
-	                    strokeWidth : 1.5
+	                    strokeWidth : 1.8
 	                },
 	                // display (BOOLEAN) - To be set to "true" in order to display the layer. Set to "false" to hide it.
 	                display : true
@@ -216,7 +216,7 @@
 			// Define layout components (all param : STRING) - Title, descriptions, etc...
 		    layout : {
 		        // appTitle - Set the title of the webmap.
-		        appTitle : "NIGERIA - Ebonyi State - 2019 / 2020 Lassa Fever | Probable-Suspected Cases",
+		        appTitle : "NIGERIA - Ebonyi State - 2018/2019/2020 Lassa Fever | Probable Cases",
 		        // analysisSectionTitle - Section title for analysis selector.
 		        analysisSectionTitle : "Map analysis",
 		        // analysisDescription - Description below analysis title (Use HTML tags for formatting).
